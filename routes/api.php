@@ -106,7 +106,7 @@ Route::group(['prefix' => 'dashboard'], static function () {
         Route::get('languages', [DashboardAdminLanguageController::class, 'index'])->name('languages.index');
         Route::post('languages', [DashboardAdminLanguageController::class, 'store'])->name('languages.store');
         Route::get('languages/{language}', [DashboardAdminLanguageController::class, 'show'])->name('languages.show');
-        Route::patch('languages/{language}', [DashboardAdminLanguageController::class, 'update'])->name('languages.update');
+        Route::post('languages/{language}', [DashboardAdminLanguageController::class, 'update'])->name('languages.update');
         Route::delete('languages/{language}', [DashboardAdminLanguageController::class, 'destroy'])->name('languages.destroy');
     });
 });

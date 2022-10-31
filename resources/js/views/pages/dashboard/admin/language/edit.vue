@@ -181,7 +181,7 @@ export default {
             const self = this;
             self.loading = true;
             // axios.put('api/dashboard/admin/languages/' + self.$route.params.id, {strings: self.translations}).then(function () {
-            axios.patch('api/dashboard/admin/languages/' + self.$route.params.id, {strings: self.translations}).then(function () {
+            axios.post('api/dashboard/admin/languages/' + self.$route.params.id, {strings: self.translations}).then(function () {
                 if (self.language.locale === self.defaultLocale) {
                     axios.get('api/lang/' + self.$i18n.locale).then(function (response) {
                         self.$i18n.setLocaleMessage(self.$i18n.locale, response.data);
