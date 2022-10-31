@@ -216,7 +216,7 @@ export default {
         saveUserRole() {
             const self = this;
             self.loading = true;
-            axios.put('api/dashboard/admin/user-roles/' + self.$route.params.id, self.userRole).then(function () {
+            axios.patch('api/dashboard/admin/user-roles/' + self.$route.params.id, self.userRole).then(function () {
                 self.loading = false;
                 self.$notify({
                     title: self.$i18n.t('Success').toString(),

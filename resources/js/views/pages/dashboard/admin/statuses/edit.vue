@@ -82,7 +82,7 @@ export default {
         saveStatus() {
             const self = this;
             self.loading = true;
-            axios.put('api/dashboard/admin/statuses/' + self.$route.params.id, self.status).then(function () {
+            axios.patch('api/dashboard/admin/statuses/' + self.$route.params.id, self.status).then(function () {
                 self.loading = false;
                 self.$notify({
                     title: self.$i18n.t('Success').toString(),

@@ -231,7 +231,7 @@ export default {
         saveDepartment() {
             const self = this;
             self.loading = true;
-            axios.put('api/dashboard/admin/departments/' + self.$route.params.id, self.department).then(function (response) {
+            axios.patch('api/dashboard/admin/departments/' + self.$route.params.id, self.department).then(function (response) {
                 self.loading = false;
                 self.$notify({
                     title: self.$i18n.t('Success').toString(),
