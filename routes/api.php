@@ -103,10 +103,10 @@ Route::group(['prefix' => 'dashboard'], static function () {
 
         Route::post('languages/sync', [DashboardAdminLanguageController::class, 'sync'])->name('languages.sync');
         // Route::apiResource('languages', DashboardAdminLanguageController::class);
-        Route::get('languages', DashboardAdminLanguageController::class, 'index')->name('languages.index');
-        Route::post('languages', DashboardAdminLanguageController::class, 'store')->name('languages.store');
-        Route::get('languages/{language}', DashboardAdminLanguageController::class, 'show')->name('languages.show');
-        Route::patch('languages/{language}', DashboardAdminLanguageController::class, 'update')->name('languages.update');
-        Route::delete('languages/{language}', DashboardAdminLanguageController::class, 'destroy')->name('languages.destroy');
+        Route::get('languages', [DashboardAdminLanguageController::class, 'index'])->name('languages.index');
+        Route::post('languages', [DashboardAdminLanguageController::class, 'store'])->name('languages.store');
+        Route::get('languages/{language}', [DashboardAdminLanguageController::class, 'show'])->name('languages.show');
+        Route::patch('languages/{language}', [DashboardAdminLanguageController::class, 'update'])->name('languages.update');
+        Route::delete('languages/{language}', [DashboardAdminLanguageController::class, 'destroy'])->name('languages.destroy');
     });
 });
