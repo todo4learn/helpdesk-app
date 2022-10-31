@@ -222,7 +222,7 @@ export default {
         saveUser() {
             const self = this;
             self.loading = true;
-            axios.patch('api/dashboard/admin/users/' + self.$route.params.id, self.user).then(function () {
+            axios.post('api/dashboard/admin/users/' + self.$route.params.id, self.user).then(function () {
                 self.loading = false;
                 self.$notify({
                     title: self.$i18n.t('Success').toString(),

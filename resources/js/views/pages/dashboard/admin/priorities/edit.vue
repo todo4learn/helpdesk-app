@@ -97,7 +97,7 @@ export default {
         savePriority() {
             const self = this;
             self.loading = true;
-            axios.patch('api/dashboard/admin/priorities/' + self.$route.params.id, self.priority).then(function () {
+            axios.post('api/dashboard/admin/priorities/' + self.$route.params.id, self.priority).then(function () {
                 self.loading = false;
                 self.$notify({
                     title: self.$i18n.t('Success').toString(),

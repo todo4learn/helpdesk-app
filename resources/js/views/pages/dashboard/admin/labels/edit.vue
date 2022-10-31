@@ -165,7 +165,7 @@ export default {
         saveLabel() {
             const self = this;
             self.loading = true;
-            axios.patch('api/dashboard/admin/labels/' + self.$route.params.id, self.label).then(function () {
+            axios.post('api/dashboard/admin/labels/' + self.$route.params.id, self.label).then(function () {
                 self.loading = false;
                 self.$notify({
                     title: self.$i18n.t('Success').toString(),

@@ -188,7 +188,7 @@ export default {
         saveCannedReply() {
             const self = this;
             self.loading = true;
-            axios.patch('api/dashboard/canned-replies/' + self.$route.params.id, self.cannedReply).then(function () {
+            axios.post('api/dashboard/canned-replies/' + self.$route.params.id, self.cannedReply).then(function () {
                 self.loading = false;
                 self.$notify({
                     title: self.$i18n.t('Success').toString(),
